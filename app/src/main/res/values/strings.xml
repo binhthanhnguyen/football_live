@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JsoupDemo</string>
+    <string name="app_name">Football Live</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -18,4 +18,12 @@
 
     <string name="btn_play_first_half">Play First Half</string>
     <string name="btn_play_second_half">Play Second Half</string>
+
+    <string name="position">#</string>
+    <string name="team">Team</string>
+    <string name="gp">GP</string>
+    <string name="w">W</string>
+    <string name="d">D</string>
+    <string name="l">L</string>
+    <string name="pts">PTS</string>
 </resources>

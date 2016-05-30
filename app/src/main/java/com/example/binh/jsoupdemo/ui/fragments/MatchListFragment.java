@@ -124,7 +124,6 @@ public class MatchListFragment extends Fragment {
             } else  {
                 return new FootballFetcher().searchMatchItems(mQuery);
             }
-
         }
 
         @Override

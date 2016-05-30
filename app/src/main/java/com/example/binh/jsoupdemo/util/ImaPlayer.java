@@ -388,7 +388,7 @@ public class ImaPlayer {
 
     callbacks = new ArrayList<VideoAdPlayer.VideoAdPlayerCallback>();
 
-    boolean autoplay = false;
+    boolean autoplay = true;
     contentPlayer = new SimpleVideoPlayer(activity,
         container,
         video,

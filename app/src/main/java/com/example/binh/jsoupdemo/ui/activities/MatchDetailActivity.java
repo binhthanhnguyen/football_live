@@ -64,6 +64,7 @@ public class MatchDetailActivity extends AppCompatActivity implements PlaybackCo
     private Match mMatch;
 
     private ProgressDialog mProgressDialog;
+    private ProgressBar mProgressBar;
     private RelativeLayout mMatchDetailLayout;
     private FrameLayout mVideoPlayerContainer;
     private ImaPlayer mImaPlayer;
@@ -115,6 +116,8 @@ public class MatchDetailActivity extends AppCompatActivity implements PlaybackCo
                 playSecondHalf();
             }
         });
+
+        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
     }
 
     @Override
@@ -134,7 +137,7 @@ public class MatchDetailActivity extends AppCompatActivity implements PlaybackCo
     }
 
     private void playFirstHalf() {
-        Uri uri = Uri.parse(firstHalfURL);
+        mProgressBar.setVisibility(View.VISIBLE);
         if (mImaPlayer != null) {
             mImaPlayer.release();
         }
@@ -144,11 +147,10 @@ public class MatchDetailActivity extends AppCompatActivity implements PlaybackCo
         mImaPlayer = new ImaPlayer(this, mVideoPlayerContainer, video, mMatch.getTitle(), null);
         mImaPlayer.setFullscreenCallback(this);
         mImaPlayer.play();
-
     }
 
     private void playSecondHalf() {
-        Uri uri = Uri.parse(secondHalfURL);
+        mProgressBar.setVisibility(View.VISIBLE);
         if (mImaPlayer != null) {
             mImaPlayer.release();
         }
@@ -158,6 +160,7 @@ public class MatchDetailActivity extends AppCompatActivity implements PlaybackCo
         mImaPlayer = new ImaPlayer(this, mVideoPlayerContainer, video, mMatch.getTitle(), null);
         mImaPlayer.setFullscreenCallback(this);
         mImaPlayer.play();
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -198,6 +201,7 @@ public class MatchDetailActivity extends AppCompatActivity implements PlaybackCo
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             mProgressDialog.dismiss();
+            playFirstHalf();
         }
 
         private String parseLink(String html) {
