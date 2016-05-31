@@ -1,5 +1,6 @@
 package com.example.binh.jsoupdemo.ui.fragments;
 
+import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.binh.jsoupdemo.R;
 import com.example.binh.jsoupdemo.data.models.Team;
 import com.example.binh.jsoupdemo.ui.adapters.TableAdapter;
+import com.example.binh.jsoupdemo.ui.adapters.TableLandAdapter;
 import com.example.binh.jsoupdemo.util.FootballFetcher;
 
 import java.util.ArrayList;
@@ -64,7 +66,14 @@ public class TableFragment extends Fragment {
 
     private void setupAdapter() {
         if (isAdded()) {
-            mRecyclerView.setAdapter(new TableAdapter(mTeams));
+            switch (getResources().getConfiguration().orientation) {
+                case Configuration.ORIENTATION_PORTRAIT:
+                    mRecyclerView.setAdapter(new TableAdapter(mTeams));
+                    break;
+                case Configuration.ORIENTATION_LANDSCAPE:
+                    mRecyclerView.setAdapter(new TableLandAdapter(mTeams));
+                    break;
+            }
         }
     }
 }

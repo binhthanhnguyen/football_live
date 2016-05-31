@@ -28,6 +28,7 @@ public class Team {
         mLosses = losses;
     }
 
+
     public int getPosition() {
         return mPosition;
     }
@@ -42,6 +43,22 @@ public class Team {
 
     public int getPst() {
         return mPst;
+    }
+
+    public int getGp() {
+        return mGp;
+    }
+
+    public int getWins() {
+        return mWins;
+    }
+
+    public int getDraws() {
+        return mDraws;
+    }
+
+    public int getLosses() {
+        return mLosses;
     }
 
 }

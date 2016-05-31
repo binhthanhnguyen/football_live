@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="16dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|left">
+        <TextView
+            android:id="@+id/text_position"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"/>
+        <ImageView
+            android:id="@+id/image_team"
+            android:layout_width="@dimen/team_logo_size"
+            android:layout_height="@dimen/team_logo_size"
+            android:layout_marginRight="20dp"/>
+        <TextView
+            android:id="@+id/text_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|end">
+        <TextView
+            android:id="@+id/text_gp"
+            android:layout_width="@dimen/text_team_size"
+            android:layout_height="@dimen/team_logo_size"
+            android:layout_marginRight="@dimen/team_margin_right"
+            android:gravity="center_vertical|center_horizontal"/>
+
+        <TextView
+            android:id="@+id/text_wins"
+            android:layout_width="@dimen/text_team_size"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_margin_right"/>
+        <TextView
+            android:id="@+id/text_draws"
+            android:layout_width="@dimen/text_team_size"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_margin_right"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/text_losses"
+            android:layout_width="@dimen/text_team_size"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/team_margin_right"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/text_pts"
+            android:layout_width="@dimen/text_team_size"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>
+
